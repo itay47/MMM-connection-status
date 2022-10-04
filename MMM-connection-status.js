@@ -1,7 +1,8 @@
 /* Magic Mirror
  * Module: MMM-connection-status
  *
- * By Sheya Bernstein https://github.com/sheyabernstein/MMM-connection-status
+ * By Itay Shechter https://github.com/itay47/MMM-connection-status
+ * Based on Sheya Bernstein https://github.com/sheyabernstein/MMM-connection-status
  * MIT Licensed.
  */
 
@@ -39,15 +40,18 @@ Module.register('MMM-connection-status', {
 			wrapper.id = 'wifiUp';
 			wrapper.width = '50';
 			wrapper.height = '50';
-			wrapper.src = 'https://cdn.iconscout.com/icon/premium/png-256-thumb/wifi-1613601-1368727.png'
-
+			wrapper.src = "../modules/MMM-connection-status/img/wifi-up.png";
+			
+			//wrapper.src = 'https://cdn.iconscout.com/icon/premium/png-256-thumb/wifi-1613601-1368727.png'
 			//wrapper.innerHTML = "/img/wifi-signal.png"; //this.translate("INET_CONN_CONNECTED");
 		} else {
 			wrapper.className = 'normal bright';
 			wrapper.id = 'wifiDown';
 			wrapper.width = '50';
 			wrapper.height = '50';
-			wrapper.src = 'https://cdn.iconscout.com/icon/premium/png-256-thumb/no-wifi-1471925-1246106.png'
+			wrapper.src = "../modules/MMM-connection-status/img/wifi-down.png";
+			
+			//wrapper.src = 'https://cdn.iconscout.com/icon/premium/png-256-thumb/no-wifi-1471925-1246106.png'
 			//wrapper.innerHTML = "/img/no-wifi.png"; //this.translate("INET_CONN_NOTCONNECTED");
 		}
 
