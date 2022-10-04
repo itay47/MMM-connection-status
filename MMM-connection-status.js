@@ -33,7 +33,27 @@ Module.register('MMM-connection-status', {
 
 	// Override dom generator.
 	getDom: function() {
-		var wrapper = document.createElement('div');
+				var wrapper = document.createElement('img');
+		if (window.navigator.onLine) {
+			wrapper.className = 'small';
+			wrapper.id = 'wifiUp';
+			wrapper.width = '50';
+			wrapper.height = '50';
+			wrapper.src = 'https://cdn.iconscout.com/icon/premium/png-256-thumb/wifi-1613601-1368727.png'
+
+			//wrapper.innerHTML = "/img/wifi-signal.png"; //this.translate("INET_CONN_CONNECTED");
+		} else {
+			wrapper.className = 'normal bright';
+			wrapper.id = 'wifiDown';
+			wrapper.width = '50';
+			wrapper.height = '50';
+			wrapper.src = 'https://cdn.iconscout.com/icon/premium/png-256-thumb/no-wifi-1471925-1246106.png'
+			//wrapper.innerHTML = "/img/no-wifi.png"; //this.translate("INET_CONN_NOTCONNECTED");
+		}
+
+		return wrapper;
+		
+		/*var wrapper = document.createElement('div');
 		if (window.navigator.onLine) {
 			wrapper.className = 'small';
 			wrapper.innerHTML = this.translate("INET_CONN_CONNECTED");
@@ -42,7 +62,7 @@ Module.register('MMM-connection-status', {
 			wrapper.innerHTML = this.translate("INET_CONN_NOTCONNECTED");
 		}
 
-		return wrapper;
+		return wrapper;*/
 	},
 
 	// Infinite loop
